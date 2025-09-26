@@ -1,0 +1,25 @@
+# Docker Compose Template for easy usage
+# Just change the HOST_PATH to your directory!
+
+services:
+  simple-fileserver:
+    image: lordcraymen/simple-fileserver:latest
+    container_name: my-fileserver
+    ports:
+      - "8080:80"
+    volumes:
+      # 👇 CHANGE THIS PATH TO YOUR DIRECTORY
+      - "C:/your/files/directory:/www:ro"
+    restart: unless-stopped
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# Usage:
+# 1. Copy this file to docker-compose.yml
+# 2. Change the volume path above
+# 3. Run: docker-compose up -d

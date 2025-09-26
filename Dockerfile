@@ -6,6 +6,11 @@ LABEL maintainer="your-email@example.com"
 LABEL description="Ultra-lightweight static file server using BusyBox httpd"
 LABEL version="1.0.0"
 
+# Docker Desktop volume suggestions
+LABEL com.docker.desktop.extension.api.version=">= 0.2.3"
+LABEL com.docker.desktop.volume.path="/www"
+LABEL com.docker.desktop.volume.description="Static files directory"
+
 # Create www directory
 RUN mkdir -p /www
 
