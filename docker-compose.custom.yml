@@ -1,0 +1,25 @@
+# Alternative docker-compose.yml for custom image
+version: "3.8"
+
+services:
+  fileserver:
+    # Option 1: Use pre-built image from Docker Hub (when available)
+    # image: yourusername/simple-fileserver:latest
+    
+    # Option 2: Build from local Dockerfile (default for development)
+    build: .
+    
+    container_name: simple-fileserver
+    volumes:
+      - ${SERVER_ROOT?Server Root required. Please check your .env file:-./www}:/www:ro
+    ports:
+      - "${PORT?Port required. Please check your .env file:-8080}:80"
+    restart: unless-stopped
+    
+    # Health check (optional)
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

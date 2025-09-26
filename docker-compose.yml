@@ -1,0 +1,10 @@
+services:
+  fileserver:
+    image: busybox:latest
+    container_name: simple-fileserver
+    command: ["httpd", "-f", "-p", "80", "-h", "/www"]
+    volumes:
+      - ${SERVER_ROOT?Server Root required. Please check your .env file:-./www}:/www:ro
+    ports:
+      - "${PORT?Port required. Please check your .env file:-8080}:80"
+    restart: unless-stopped

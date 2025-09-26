@@ -1,0 +1,37 @@
+{
+  "name": "simple-fileserver",
+  "version": "1.0.0",
+  "description": "Ultra-lightweight static file server using BusyBox httpd in Docker",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "restart": "docker-compose restart",
+    "logs": "docker-compose logs -f",
+    "build": "docker build -t simple-fileserver .",
+    "test": "curl -f http://localhost:8080/ || exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lordcraymen/simple-fileserver.git"
+  },
+  "keywords": [
+    "docker",
+    "static-files",
+    "fileserver",
+    "busybox",
+    "nginx-proxy-manager",
+    "lightweight",
+    "http-server"
+  ],
+  "author": "Florian Patzke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lordcraymen/simple-fileserver/issues"
+  },
+  "homepage": "https://github.com/lordcraymen/simple-fileserver#readme",
+  "engines": {
+    "docker": ">=20.0.0",
+    "docker-compose": ">=2.0.0"
+  }
+}
