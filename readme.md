@@ -1,25 +1,6 @@
 # Simple Static File Server
 
-[![Do### Option 2: Using Docker Desktop GUI
-
-1. **Pull the image**: `lordcraymen/simple-fileserver:latest`
-2. **Run container** with these settings:
-   - **Container name**: `my-fileserver` (no spaces!)
-   - **Port**: `8080:80`
-   - **Volume**: 
-     - Host Path: `C:\your\files\directory` (your Windows folder)
-     - Container Path: `/www` ⚠️ **Always use `/www`!**
-     - Read Only: ✅
-
-### Option 3: Using Docker command line
-
-```bash
-# Windows
-docker run -d --name simple-fileserver -p 8080:80 -v "C:\your\files:/www:ro" lordcraymen/simple-fileserver:latest
-
-# Linux/Mac  
-docker run -d --name simple-fileserver -p 8080:80 -v "/your/files:/www:ro" lordcraymen/simple-fileserver:latest
-```d](https://github.com/lordcraymen/simple-fileserver/actions/workflows/docker.yml/badge.svg)](https://github.com/lordcraymen/simple-fileserver/actions/workflows/docker.yml)
+[![Docker Build](https://github.com/lordcraymen/simple-fileserver/actions/workflows/docker.yml/badge.svg)](https://github.com/lordcraymen/simple-fileserver/actions/workflows/docker.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/lordcraymen/simple-fileserver)](https://hub.docker.com/r/lordcraymen/simple-fileserver)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lordcraymen/simple-fileserver)](https://github.com/lordcraymen/simple-fileserver/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -53,17 +34,28 @@ A minimal Docker-based static file server using BusyBox httpd, perfect for servi
 3. **Access your files**
    Open http://localhost:8080 in your browser
 
-### Option 2: Using Docker directly
+### Option 2: Using Docker Desktop GUI
+
+1. **Pull the image**: `lordcraymen/simple-fileserver:latest`
+2. **Run container** with these settings:
+   - **Container name**: `my-fileserver` (no spaces!)
+   - **Port**: `8080:80`
+   - **Volume**: 
+     - Host Path: `C:\your\files\directory` (your Windows folder)
+     - Container Path: `/www` ⚠️ **Always use `/www`!**
+     - Read Only: ✅
+
+### Option 3: Using Docker command line
 
 ```bash
-docker run -d \
-  --name simple-fileserver \
-  -p 8080:80 \
-  -v $(pwd)/www:/www:ro \
-  lordcraymen/simple-fileserver:latest
+# Windows
+docker run -d --name simple-fileserver -p 8080:80 -v "C:\your\files:/www:ro" lordcraymen/simple-fileserver:latest
+
+# Linux/Mac  
+docker run -d --name simple-fileserver -p 8080:80 -v "/your/files:/www:ro" lordcraymen/simple-fileserver:latest
 ```
 
-### Option 3: Using Makefile
+### Option 4: Using Makefile
 
 ```bash
 make run      # Start server
