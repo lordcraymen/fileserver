@@ -1,8 +1,8 @@
 # Simple Static File Server
 
-[![Docker Build](https://github.com/yourusername/simple-fileserver/actions/workflows/docker.yml/badge.svg)](https://github.com/yourusername/simple-fileserver/actions/workflows/docker.yml)
-[![Docker Pulls](https://img.shields.io/docker/pulls/yourusername/simple-fileserver)](https://hub.docker.com/r/yourusername/simple-fileserver)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/yourusername/simple-fileserver)](https://github.com/yourusername/simple-fileserver/releases)
+[![Docker Build](https://github.com/lordcraymen/simple-fileserver/actions/workflows/docker.yml/badge.svg)](https://github.com/lordcraymen/simple-fileserver/actions/workflows/docker.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/lordcraymen/simple-fileserver)](https://hub.docker.com/r/lordcraymen/simple-fileserver)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lordcraymen/simple-fileserver)](https://github.com/lordcraymen/simple-fileserver/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A minimal Docker-based static file server using BusyBox httpd, perfect for serving static files and integrating with reverse proxies like nginx proxy manager.
@@ -22,7 +22,7 @@ A minimal Docker-based static file server using BusyBox httpd, perfect for servi
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/simple-fileserver.git
+   git clone https://github.com/lordcraymen/simple-fileserver.git
    cd simple-fileserver
    ```
 
@@ -193,8 +193,8 @@ git push origin v1.0.1
 ## Docker Hub
 
 Pre-built images are available on Docker Hub:
-- `yourusername/simple-fileserver:latest`
-- `yourusername/simple-fileserver:v1.0.0`
+- `lordcraymen/simple-fileserver:latest`
+- `lordcraymen/simple-fileserver:v1.0.0`
 
 Multi-architecture support: `linux/amd64`, `linux/arm64`
 

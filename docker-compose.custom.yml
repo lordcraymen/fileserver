@@ -4,7 +4,7 @@ version: "3.8"
 services:
   fileserver:
     # Option 1: Use pre-built image from Docker Hub (when available)
-    # image: yourusername/simple-fileserver:latest
+    # image: lordcraymen/simple-fileserver:latest
     
     # Option 2: Build from local Dockerfile (default for development)
     build: .
