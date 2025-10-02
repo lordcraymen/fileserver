@@ -9,7 +9,7 @@
     "restart": "docker-compose restart",
     "logs": "docker-compose logs -f",
     "build": "docker build -t simple-fileserver .",
-    "test": "curl -f http://localhost:8080/ || exit 1"
+    "test": "cucumber-js tests/features --require tests/step-definitions"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,11 @@
   "engines": {
     "docker": ">=20.0.0",
     "docker-compose": ">=2.0.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "axios": "^1.12.2",
+    "dockerode": "^4.0.9",
+    "fs-extra": "^11.3.2"
   }
 }

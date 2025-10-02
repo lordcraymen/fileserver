@@ -4,6 +4,9 @@
 # Docker
 .docker/
 
+# Node modules
+node_modules/
+
 # Logs
 *.log
 logs/
